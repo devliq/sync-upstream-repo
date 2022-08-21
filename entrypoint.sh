@@ -28,13 +28,14 @@ fi
 
 echo "UPSTREAM_REPO=$UPSTREAM_REPO"
 
-git clone "https://github.com/${GITHUB_REPOSITORY}.git" work
 # git clone git@github.com:dabreadman/sync-upstream-repo.git work
 cd work || { echo "Missing work dir" && exit 2 ; }
 
 git config user.name "${GITHUB_ACTOR}"
 git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
 git config --local user.password ${GITHUB_TOKEN}
+
+git clone "https://github.com/${GITHUB_REPOSITORY}.git" work
 
 git remote set-url origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
 
