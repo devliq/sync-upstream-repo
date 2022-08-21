@@ -28,8 +28,8 @@ fi
 
 echo "UPSTREAM_REPO=$UPSTREAM_REPO"
 
-# git clone "https://github.com/${GITHUB_REPOSITORY}.git" work
-git clone git@github.com:dabreadman/sync-upstream-repo.git work
+git clone "https://github.com/${GITHUB_REPOSITORY}.git" work
+# git clone git@github.com:dabreadman/sync-upstream-repo.git work
 cd work || { echo "Missing work dir" && exit 2 ; }
 
 git config user.name "${GITHUB_ACTOR}"
